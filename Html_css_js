@@ -1,0 +1,127 @@
+//HTML AND CSS PART:-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: lightseagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dropdown {
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-toggle {
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    z-index: 1;
+}
+a{
+    text-decoration: none;
+}
+
+/* .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+} */
+
+.dropdown-menu a:hover {
+    background-color: #f4f4f4;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.search-button {
+    background-color:blueviolet;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+
+<body>
+    <div class="search-container">
+        <div class="dropdown">
+            <button class="dropdown-toggle">Everything</button>
+            <div class="dropdown-menu">
+                <a href="#">Everything</a>
+                <a href="#">Software Development</a>
+                <a href="#">Web Development</a>
+                <a href="#">Data Analyst</a>
+                <a href="#">IT Consultant</a>
+                <a href="#">Network Administrator</a>
+            </div>
+        </div>
+        <input type="text" placeholder="Search Anything...">
+        <button class="search-button">Search</button>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
+
+
+
+
+
+//JavaScript part:-
+
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownToggle.addEventListener('click', function () {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
